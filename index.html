@@ -1,65 +1,556 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WebLocal — Création de sites internet pour petites entreprises locales</title>
+  <meta name="description" content="Sites vitrine et e‑commerce rapides, beaux et rentables pour artisans, commerçants et TPE. Devis instantané, portefeuille de réalisations, accompagnement local." />
+  <meta name="keywords" content="création site internet, site vitrine, e-commerce, SEO local, TPE, artisan, commerçant, France" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='64' width='64'%3E%3Ctext y='50' x='8' font-size='48'%3E🌐%3C/text%3E%3C/svg%3E">
+  <!-- Open Graph -->
+  <meta property="og:title" content="WebLocal — Création de sites internet pour petites entreprises locales">
+  <meta property="og:description" content="Devis instantané, réalisations, tarifs clairs, support local.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAA...">
+  <meta name="theme-color" content="#2f6fed" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header class="apple-header">
-        <div class="logo"></div>
-            <div class="logo"><img src="images/logo.png" alt="Logo" class="logo-img"></div>
-        <h1>Création de sites web pour entreprises locales</h1>
-        <nav>
-            <a href="#" class="nav-link active">Accueil</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#portfolio" class="nav-link">Portfolio</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-    </header>
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
-    <section class="intro-section">
-        <h2>Votre présence en ligne, simplement et efficacement</h2>
-        <p>Je propose la création de sites web modernes, adaptés aux besoins des petites entreprises locales. Valorisez votre activité et touchez plus de clients !</p>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🌐</span>
+        <span class="brand-text">WebLocal</span>
+      </div>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="Ouvrir le menu">☰</button>
+        <ul id="navList">
+          <li><a href="#hero" data-i18n="nav_home">Accueil</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#portfolio" data-i18n="nav_work">Réalisations</a></li>
+          <li><a href="#pricing" data-i18n="nav_pricing">Tarifs</a></li>
+          <li><a href="#testimonials" data-i18n="nav_testimonials">Avis</a></li>
+          <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <button id="langToggle" class="btn btn-ghost" aria-label="Changer de langue">FR</button>
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Changer de thème">🌓</button>
+        <a href="#quote" class="btn btn-primary" data-i18n="cta_quote">Obtenir un devis</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="hero" class="hero section">
+      <div class="container grid-2">
+        <div class="hero-text">
+          <h1 data-i18n="hero_title">Votre site pro, rapide et rentable</h1>
+          <p class="lead" data-i18n="hero_sub">
+            Nous créons des sites internet pour artisans, commerçants et TPE près de chez vous.
+            Conçus pour convertir, faciles à gérer, optimisés pour le SEO local.
+          </p>
+          <ul class="checks">
+            <li data-i18n="hero_b1">Devis instantané et transparent</li>
+            <li data-i18n="hero_b2">Livraison en 10 à 15 jours</li>
+            <li data-i18n="hero_b3">Maintenance et accompagnement</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary" data-i18n="cta_quote">Obtenir un devis</a>
+            <a href="tel:+33600000000" class="btn btn-secondary" data-i18n="cta_call">Appeler maintenant</a>
+          </div>
+          <form id="auditForm" class="inline-form" novalidate>
+            <label for="auditUrl" data-i18n="audit_label">Lien de votre site (si existant)</label>
+            <input id="auditUrl" name="url" type="url" placeholder="https://votresite.fr" />
+            <button class="btn" type="submit" data-i18n="audit_btn">Recevoir un mini‑audit gratuit</button>
+            <small class="muted" data-i18n="audit_small">Réponse sous 24h par email.</small>
+          </form>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <!-- Illustration SVG simple -->
+          <svg viewBox="0 0 500 350" class="hero-svg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="var(--primary-500)"/>
+                <stop offset="100%" stop-color="var(--accent-500)"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="30" width="460" height="290" rx="16" fill="url(#g)"/>
+            <rect x="40" y="60" width="420" height="50" rx="8" fill="white" opacity="0.9"/>
+            <rect x="40" y="130" width="260" height="160" rx="8" fill="white" opacity="0.9"/>
+            <rect x="320" y="130" width="140" height="160" rx="8" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="trustbar container">
+        <span class="muted" data-i18n="trust">De nombreux commerces et artisans nous font confiance</span>
+        <div class="logos">
+          <span class="logo-pill">Boulangerie Dupont</span>
+          <span class="logo-pill">Garage Martin</span>
+          <span class="logo-pill">Fleuriste Lily</span>
+          <span class="logo-pill">Café des Arts</span>
+        </div>
+      </div>
     </section>
 
-    <main class="main-grid">
-        <div class="card info-card" id="services">
-            <h3>Pourquoi choisir mon service ?</h3>
-            <ul>
-                <li>Design professionnel et personnalisé</li>
-                <li>Site responsive (adapté mobile/tablette/PC)</li>
-                <li>Référencement local optimisé</li>
-                <li>Accompagnement et conseils sur-mesure</li>
-                <li>Maintenance et évolutions possibles</li>
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 data-i18n="services_title">Nos services</h2>
+        <p class="section-intro" data-i18n="services_intro">
+          Des offres claires pour démarrer vite et bien, avec l’essentiel pour être trouvé et convertir.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>Site vitrine</h3>
+            <p>Présentez votre activité, services et avis clients avec un design moderne.</p>
+            <ul class="bullets">
+              <li>Jusqu’à 6 pages</li>
+              <li>Formulaire de contact</li>
+              <li>SEO local</li>
             </ul>
+          </article>
+          <article class="card">
+            <h3>E‑commerce</h3>
+            <p>Boutique en ligne simple, gestion produits, paiements, click & collect.</p>
+            <ul class="bullets">
+              <li>Catalogue, variations</li>
+              <li>Paiement sécurisé</li>
+              <li>Suivi commandes</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Réservation</h3>
+            <p>Prise de rendez‑vous en ligne pour salons, restaurants, cabinets.</p>
+            <ul class="bullets">
+              <li>Calendrier</li>
+              <li>Notifications email</li>
+              <li>Rappels</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>SEO & Contenu</h3>
+            <p>Rédaction optimisée, fiches Google Business, netlinking local.</p>
+            <ul class="bullets">
+              <li>Audit mots‑clés</li>
+              <li>Optimisations techniques</li>
+              <li>Suivi mensuel</li>
+            </ul>
+          </article>
         </div>
-        <div class="card portfolio-card" id="portfolio">
-            <h3>Exemples de réalisations</h3>
-            <div class="portfolio-examples">
-                <div class="portfolio-item">
-                    <img src="images/site_apple.png" alt="Site Vitrine Apple Style">
-                    <span>Site vitrine style Apple</span>
-                </div>
-            </div>
-        </div>
-        <div class="card contact-card" id="contact">
-            <h3>Contact</h3>
-            <form class="contact-form">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </main>
+      </div>
+    </section>
 
-    <footer class="apple-footer">
-        <p>&copy; 2025 Création de sites web locaux. Tous droits réservés.</p>
-    </footer>
+    <!-- Processus -->
+    <section class="section alt">
+      <div class="container">
+        <h2 data-i18n="process_title">Notre méthode</h2>
+        <ol class="steps">
+          <li><span>1</span><div><strong>Découverte</strong><br>Objectifs, offres, audience.</div></li>
+          <li><span>2</span><div><strong>Design</strong><br>Maquettes et contenus.</div></li>
+          <li><span>3</span><div><strong>Développement</strong><br>Intégration, tests.</div></li>
+          <li><span>4</span><div><strong>SEO & Mise en ligne</strong><br>Suivi et amélioration.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 data-i18n="work_title">Réalisations</h2>
+        <div class="filterbar" role="toolbar" aria-label="Filtrer les réalisations">
+          <button class="chip active" data-filter="all">Tous</button>
+          <button class="chip" data-filter="vitrine">Vitrines</button>
+          <button class="chip" data-filter="ecommerce">E‑commerce</button>
+          <button class="chip" data-filter="resto">Restaurants</button>
+          <button class="chip" data-filter="artisan">Artisans</button>
+        </div>
+        <div class="grid-3 portfolio-grid" id="portfolioGrid" aria-live="polite">
+          <!-- Items générés en JS si besoin; en met quelques‑uns en HTML -->
+          <figure class="card media" data-cat="vitrine">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ccd9ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3EBoulangerie%3C/text%3E%3C/svg%3E" alt="Site vitrine Boulangerie">
+            <figcaption>Boulangerie Dupont</figcaption>
+          </figure>
+          <figure class="card media" data-cat="ecommerce">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ffe0cc'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3EBoutique%20Artisanale%3C/text%3E%3C/svg%3E" alt="Boutique artisanale en ligne">
+            <figcaption>Boutique artisanale</figcaption>
+          </figure>
+          <figure class="card media" data-cat="resto">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23e6ffed'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3ERestaurant%3C/text%3E%3C/svg%3E" alt="Restaurant local">
+            <figcaption>Restaurant Le Central</figcaption>
+          </figure>
+          <figure class="card media" data-cat="artisan">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23fff4cc'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3EPlombier%3C/text%3E%3C/svg%3E" alt="Plombier local">
+            <figcaption>Plombier Martin</figcaption>
+          </figure>
+          <figure class="card media" data-cat="vitrine">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f0e6ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3ESalon%20de%20coiffure%3C/text%3E%3C/svg%3E" alt="Salon de coiffure">
+            <figcaption>Salon de coiffure Élégance</figcaption>
+          </figure>
+          <figure class="card media" data-cat="ecommerce">
+            <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ccf5ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28'%3EConcept%20Store%3C/text%3E%3C/svg%3E" alt="Concept store en ligne">
+            <figcaption>Concept Store</figcaption>
+          </figure>
+        </div>
+        <!-- Modal portfolio -->
+        <dialog id="portfolioModal" aria-labelledby="pmTitle">
+          <button class="modal-close" aria-label="Fermer">×</button>
+          <div class="modal-content">
+            <h3 id="pmTitle">Projet</h3>
+            <div class="modal-body">
+              <img id="pmImg" alt="">
+              <p id="pmDesc">Description du projet.</p>
+              <ul id="pmTags" class="tags"></ul>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section id="pricing" class="section alt">
+      <div class="container">
+        <div class="pricing-head">
+          <h2 data-i18n="pricing_title">Tarifs clairs</h2>
+          <div class="switch">
+            <span>À l’achat</span>
+            <label class="toggle">
+              <input id="billingToggle" type="checkbox" aria-label="Basculer abonnement/achat">
+              <span class="slider"></span>
+            </label>
+            <span>Abonnement</span>
+          </div>
+        </div>
+        <div class="grid-3 cards pricing-cards" id="pricingCards">
+          <!-- Cartes injectées/actualisées par JS -->
+          <article class="card price">
+            <h3>Essentiel</h3>
+            <p>Site vitrine pro pour démarrer.</p>
+            <p class="price-value"><span class="price-amount" data-amount="990">990€</span><span class="price-period">/unique</span></p>
+            <ul class="bullets">
+              <li>Jusqu’à 4 pages</li>
+              <li>Formulaire de contact</li>
+              <li>SEO local de base</li>
+            </ul>
+            <button class="btn btn-primary open-quote" data-pack="Essentiel">Choisir</button>
+          </article>
+          <article class="card price featured">
+            <h3>Business</h3>
+            <p>Parfait TPE ambitieuses.</p>
+            <p class="price-value"><span class="price-amount" data-amount="1790">1790€</span><span class="price-period">/unique</span></p>
+            <ul class="bullets">
+              <li>Jusqu’à 8 pages</li>
+              <li>Blog/Actualités</li>
+              <li>Optimisations SEO</li>
+            </ul>
+            <button class="btn btn-primary open-quote" data-pack="Business">Choisir</button>
+          </article>
+          <article class="card price">
+            <h3>E‑commerce</h3>
+            <p>Vendez en ligne simplement.</p>
+            <p class="price-value"><span class="price-amount" data-amount="2990">2990€</span><span class="price-period">/unique</span></p>
+            <ul class="bullets">
+              <li>50 produits inclus</li>
+              <li>Paiement sécurisé</li>
+              <li>Suivi commandes</li>
+            </ul>
+            <button class="btn btn-primary open-quote" data-pack="E‑commerce">Choisir</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Devis interactif -->
+    <section id="quote" class="section">
+      <div class="container">
+        <h2 data-i18n="quote_title">Devis instantané</h2>
+        <form id="quoteForm" class="quote-form" novalidate>
+          <div class="q-step">
+            <label>Type de projet</label>
+            <div class="q-options">
+              <label><input type="radio" name="type" value="vitrine" checked> Site vitrine</label>
+              <label><input type="radio" name="type" value="ecommerce"> E‑commerce</label>
+              <label><input type="radio" name="type" value="reservation"> Réservation</label>
+            </div>
+          </div>
+
+          <div class="q-step">
+            <label>Nombre de pages</label>
+            <input type="range" id="pages" name="pages" min="1" max="20" value="5" />
+            <output for="pages" id="pagesOut">5</output>
+          </div>
+
+          <div class="q-step grid-3">
+            <label><input type="checkbox" name="blog" /> Blog/Actualités</label>
+            <label><input type="checkbox" name="multi" /> Multilingue</label>
+            <label><input type="checkbox" name="seo" /> SEO avancé</label>
+            <label><input type="checkbox" name="maintenance" checked /> Maintenance</label>
+            <label><input type="checkbox" name="content" /> Rédaction de contenu</label>
+            <label><input type="checkbox" name="brand" /> Identité visuelle</label>
+          </div>
+
+          <div class="q-step">
+            <label>Niveau de design</label>
+            <select name="design">
+              <option value="standard">Standard</option>
+              <option value="premium">Premium (+)</option>
+              <option value="surmesure">Sur‑mesure (+++)</option>
+            </select>
+          </div>
+
+          <div class="q-step">
+            <label>Délai souhaité</label>
+            <select name="rush">
+              <option value="normal">10‑15 jours</option>
+              <option value="rapide">5‑7 jours (+)</option>
+              <option value="urgent">48‑72h (+++)</option>
+            </select>
+          </div>
+
+          <div class="q-result">
+            <div>
+              <h3>Estimation</h3>
+              <p><strong id="estTotal">—</strong> <span class="muted">TTC estimé</span></p>
+              <p class="muted">Détail: <span id="estDetail">—</span></p>
+            </div>
+            <div class="q-actions">
+              <button type="button" id="sendQuote" class="btn">Envoyer par email</button>
+              <button type="button" id="downloadQuote" class="btn btn-secondary">Télécharger</button>
+              <button type="button" id="printQuote" class="btn btn-ghost">Imprimer</button>
+            </div>
+          </div>
+
+          <fieldset class="q-step contactset">
+            <legend>Vos coordonnées</legend>
+            <div class="grid-3">
+              <label>Nom<input name="name" required></label>
+              <label>Email<input name="email" type="email" required></label>
+              <label>Téléphone<input name="phone" type="tel" pattern="^[0-9+() .-]{6,}$"></label>
+            </div>
+            <label>Message<textarea name="message" rows="3" placeholder="Parlez‑nous de votre activité…"></textarea></label>
+            <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </fieldset>
+        </form>
+        <p class="muted sm">Cette estimation est indicative et peut être ajustée après un échange rapide.</p>
+      </div>
+    </section>
+
+    <!-- Avis -->
+    <section id="testimonials" class="section alt">
+      <div class="container">
+        <h2 data-i18n="testi_title">Ils recommandent</h2>
+        <div class="carousel" aria-roledescription="carousel">
+          <button class="carousel-nav prev" aria-label="Précédent">‹</button>
+          <div class="carousel-track" id="testiTrack">
+            <article class="card quote">
+              <p>“Super réactifs, mon site a doublé les appels entrants.”</p>
+              <div class="who">— Claire, Fleuriste</div>
+            </article>
+            <article class="card quote">
+              <p>“Mise en ligne en 12 jours, excellent suivi et conseils SEO.”</p>
+              <div class="who">— Karim, Garage</div>
+            </article>
+            <article class="card quote">
+              <p>“Boutique en ligne simple à gérer, +35% de ventes.”</p>
+              <div class="who">— Sophie, Concept Store</div>
+            </article>
+          </div>
+          <button class="carousel-nav next" aria-label="Suivant">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 data-i18n="faq_title">Questions fréquentes</h2>
+        <div class="accordion" id="faqList">
+          <details>
+            <summary>Combien de temps pour livrer un site ?</summary>
+            <div>Entre 10 et 15 jours pour un site vitrine standard après réception des contenus.</div>
+          </details>
+          <details>
+            <summary>Proposez‑vous l’hébergement et le nom de domaine ?</summary>
+            <div>Oui, nous pouvons tout gérer ou travailler avec votre prestataire actuel.</div>
+          </details>
+          <details>
+            <summary>Pouvez‑vous reprendre un site existant ?</summary>
+            <div>Bien sûr, refonte totale ou par étapes, selon vos priorités.</div>
+          </details>
+          <details>
+            <summary>Comment se passe le paiement ?</summary>
+            <div>30% à la commande, solde à la mise en ligne. Abonnement possible.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog (statique + recherche) -->
+    <section id="blog" class="section alt">
+      <div class="container">
+        <h2 data-i18n="blog_title">Ressources & conseils</h2>
+        <input id="blogSearch" type="search" placeholder="Rechercher un article…" aria-label="Rechercher">
+        <div id="blogList" class="blog-list grid-3"></div>
+        <dialog id="blogModal">
+          <button class="modal-close" aria-label="Fermer">×</button>
+          <article class="modal-content">
+            <h3 id="blogTitle">Titre</h3>
+            <p class="muted" id="blogMeta"></p>
+            <div id="blogContent"></div>
+          </article>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <div class="grid-2">
+          <div>
+            <p><strong>WebLocal</strong><br>12 rue de la Mairie, 44000 Nantes, France</p>
+            <p><a href="tel:+33600000000">+33 6 00 00 00 00</a><br><a href="mailto:bonjour@weblocal.fr">bonjour@weblocal.fr</a></p>
+            <p class="muted">Du lundi au vendredi, 9h‑18h (CET)</p>
+            <button id="downloadVcf" class="btn btn-ghost">Ajouter à mes contacts (.vcf)</button>
+
+            <div class="mini-scheduler">
+              <h3>Prendre rendez‑vous</h3>
+              <p class="muted sm">Choisissez un créneau, nous confirmons par email.</p>
+              <div id="scheduleGrid" class="schedule-grid"></div>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form" novalidate>
+            <label>Nom<input name="name" required></label>
+            <label>Email<input name="email" type="email" required></label>
+            <label>Téléphone<input name="phone" type="tel" pattern="^[0-9+() .-]{6,}$"></label>
+            <label>Objet<select name="subject">
+              <option>Demande d’information</option>
+              <option>Devis</option>
+              <option>Support</option>
+            </select></label>
+            <label>Message<textarea name="message" rows="5" required></textarea></label>
+            <input type="text" name="company" class="hp" tabindex="-1" aria-hidden="true" autocomplete="off">
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Envoyer</button>
+              <button class="btn btn-secondary" type="reset">Effacer</button>
+            </div>
+            <p id="contactMsg" class="muted"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section alt">
+      <div class="container newsletter">
+        <h3>Recevez un guide gratuit “10 pages indispensables pour un site TPE”</h3>
+        <form id="nlForm" class="inline-form" novalidate>
+          <label for="nlEmail" class="sr-only">Email</label>
+          <input id="nlEmail" type="email" placeholder="votre@email.fr" required>
+          <button class="btn" type="submit">Recevoir</button>
+        </form>
+        <p id="nlMsg" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container grid-3">
+      <div>
+        <div class="brand"><span class="logo">🌐</span><span class="brand-text">WebLocal</span></div>
+        <p class="muted">Sites internet pour petites entreprises locales.</p>
+      </div>
+      <div>
+        <h4>Liens</h4>
+        <ul class="list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Réalisations</a></li>
+          <li><a href="#pricing">Tarifs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <ul class="list">
+          <li><a href="#" id="openPrefs">Préférences cookies</a></li>
+          <li><a href="#" id="openImpress">Mentions légales</a></li>
+          <li><a href="#" id="openPrivacy">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="muted sm">© <span id="year"></span> WebLocal. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bandeau cookies -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+    <p>Nous utilisons des cookies pour améliorer votre expérience. Acceptez‑vous ?</p>
+    <div class="actions">
+      <button id="cookieAccept" class="btn btn-primary">Tout accepter</button>
+      <button id="cookiePrefs" class="btn btn-secondary">Personnaliser</button>
+    </div>
+  </div>
+
+  <!-- Centre de préférences cookies -->
+  <dialog id="cookieDialog" aria-label="Préférences de confidentialité">
+    <form method="dialog" class="cookie-form">
+      <h3>Préférences cookies</h3>
+      <label class="cookie-row"><input type="checkbox" checked disabled> Essentiels (obligatoires)</label>
+      <label class="cookie-row"><input id="ckAnalytics" type="checkbox"> Analytics (anonymes)</label>
+      <label class="cookie-row"><input id="ckMarketing" type="checkbox"> Marketing</label>
+      <menu>
+        <button value="cancel" class="btn btn-secondary">Annuler</button>
+        <button id="cookieSave" value="default" class="btn btn-primary">Enregistrer</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- Mentions, confidentialité -->
+  <dialog id="legalDialog"><button class="modal-close" aria-label="Fermer">×</button><div id="legalContent"></div></dialog>
+
+  <script src="js/script.js"></script>
+
+  <!-- JSON‑LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"WebLocal",
+    "image":"https://example.com/logo.png",
+    "url":"https://example.com",
+    "telephone":"+33600000000",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"12 rue de la Mairie",
+      "addressLocality":"Nantes",
+      "postalCode":"44000",
+      "addressCountry":"FR"
+    },
+    "areaServed":"France",
+    "sameAs":[]
+  }
+  </script>
+
+  <!-- FAQPage structuré -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Combien de temps pour livrer un site ?","acceptedAnswer":{"@type":"Answer","text":"Entre 10 et 15 jours pour un site vitrine standard après réception des contenus."}},
+      {"@type":"Question","name":"Proposez-vous l’hébergement et le nom de domaine ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous pouvons tout gérer ou travailler avec votre prestataire actuel."}},
+      {"@type":"Question","name":"Pouvez-vous reprendre un site existant ?","acceptedAnswer":{"@type":"Answer","text":"Bien sûr, refonte totale ou par étapes, selon vos priorités."}},
+      {"@type":"Question","name":"Comment se passe le paiement ?","acceptedAnswer":{"@type":"Answer","text":"30% à la commande, solde à la mise en ligne. Abonnement possible."}}
+    ]
+  }
+  </script>
 </body>
 </html>
