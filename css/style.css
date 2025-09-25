@@ -1,3 +1,93 @@
+.logo-img {
+	height: 40px;
+	width: auto;
+	vertical-align: middle;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.portfolio-card {
+	grid-column: span 2;
+}
+.portfolio-examples {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	margin-top: 12px;
+}
+.portfolio-item {
+	background: rgba(245,246,250,0.95);
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+	padding: 12px 10px;
+	text-align: center;
+	width: 140px;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.portfolio-item:hover {
+	transform: scale(1.06);
+	box-shadow: 0 6px 24px rgba(0,113,227,0.12);
+}
+.portfolio-item img {
+	width: 100px;
+	height: 70px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.portfolio-item span {
+	display: block;
+	font-size: 0.98rem;
+	color: #222;
+	margin-top: 2px;
+}
+
+.contact-card {
+	grid-column: span 2;
+	background: rgba(255,255,255,0.92);
+}
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
+}
+.contact-form label {
+	color: #222;
+	font-weight: 500;
+}
+.contact-form input, .contact-form textarea {
+	padding: 10px;
+	border: 1.5px solid #e0eafc;
+	border-radius: 6px;
+	font-size: 1rem;
+	background: #f5f6fa;
+	transition: border-color 0.3s, box-shadow 0.3s;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+	border-color: #0071e3;
+	outline: none;
+	box-shadow: 0 2px 8px rgba(0,113,227,0.08);
+}
+.contact-form button {
+	background: linear-gradient(90deg, #0071e3 0%, #34c759 100%);
+	color: #fff;
+	border: none;
+	padding: 12px 20px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1.1rem;
+	font-weight: 600;
+	box-shadow: 0 2px 8px rgba(0,113,227,0.12);
+	transition: background 0.3s, transform 0.2s;
+	position: relative;
+	overflow: hidden;
+}
+.contact-form button:hover {
+	background: linear-gradient(90deg, #34c759 0%, #0071e3 100%);
+	transform: scale(1.06);
+}
 
 
 body {

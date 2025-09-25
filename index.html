@@ -8,51 +8,58 @@
 </head>
 <body>
     <header class="apple-header">
-        <div class="logo">🍏</div>
-        <h1>Générateur de Nombres</h1>
+        <div class="logo"></div>
+            <div class="logo"><img src="images/logo.png" alt="Logo" class="logo-img"></div>
+        <h1>Création de sites web pour entreprises locales</h1>
         <nav>
             <a href="#" class="nav-link active">Accueil</a>
-            <a href="#" class="nav-link">À propos</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
     </header>
 
     <section class="intro-section">
-        <h2>Créez des nombres en toute simplicité</h2>
-        <p>Générez des nombres aléatoires ou des séquences, avec un design inspiré d'Apple. Profitez d'une interface élégante et intuitive.</p>
+        <h2>Votre présence en ligne, simplement et efficacement</h2>
+        <p>Je propose la création de sites web modernes, adaptés aux besoins des petites entreprises locales. Valorisez votre activité et touchez plus de clients !</p>
     </section>
 
     <main class="main-grid">
-        <div class="card generator-card">
-            <h3>Générateur</h3>
-            <form id="numberForm">
-                <label for="type">Type de génération :</label>
-                <select id="type" name="type">
-                    <option value="random">Aléatoire</option>
-                    <option value="sequence">Séquentiel</option>
-                </select>
-                <label for="min">Min :</label>
-                <input type="number" id="min" name="min" value="1" required>
-                <label for="max">Max :</label>
-                <input type="number" id="max" name="max" value="100" required>
-                <button type="submit">Générer</button>
-            </form>
-            <div id="result" class="result"></div>
-        </div>
-        <div class="card info-card">
-            <h3>À propos</h3>
-            <p>Ce site vous permet de générer facilement des nombres pour vos besoins quotidiens, que ce soit pour des jeux, des tirages ou des calculs.</p>
+        <div class="card info-card" id="services">
+            <h3>Pourquoi choisir mon service ?</h3>
             <ul>
-                <li>Design épuré et moderne</li>
-                <li>Animations douces</li>
-                <li>Responsive sur tous les appareils</li>
+                <li>Design professionnel et personnalisé</li>
+                <li>Site responsive (adapté mobile/tablette/PC)</li>
+                <li>Référencement local optimisé</li>
+                <li>Accompagnement et conseils sur-mesure</li>
+                <li>Maintenance et évolutions possibles</li>
             </ul>
+        </div>
+        <div class="card portfolio-card" id="portfolio">
+            <h3>Exemples de réalisations</h3>
+            <div class="portfolio-examples">
+                <div class="portfolio-item">
+                    <img src="images/site_apple.png" alt="Site Vitrine Apple Style">
+                    <span>Site vitrine style Apple</span>
+                </div>
+            </div>
+        </div>
+        <div class="card contact-card" id="contact">
+            <h3>Contact</h3>
+            <form class="contact-form">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
         </div>
     </main>
 
     <footer class="apple-footer">
-        <p>&copy; 2025 Générateur de Nombres. Inspiré par Apple.</p>
+        <p>&copy; 2025 Création de sites web locaux. Tous droits réservés.</p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
